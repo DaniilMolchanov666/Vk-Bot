@@ -8,8 +8,7 @@ build:
 
 test:
 	./gradlew test
-report:
-	./gradlew jacocoTestReport
+
 build-run: build run
 
 .PHONY: build
