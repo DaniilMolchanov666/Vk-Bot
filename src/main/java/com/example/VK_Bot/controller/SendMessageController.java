@@ -22,8 +22,8 @@ public class SendMessageController {
     private final ConfirmServerAddressService confirmationCallbackService;
 
     /**
-     * Мето для отправки ответного сообщения пользователю, либо проверочной строки для
-     * подтвреждения сервера для Callback API
+     * Метод для отправки ответного сообщения пользователю, либо проверочной строки для
+     * подтверждения сервера для использования Callback API
      * @param request - тело запроса от сервера VK
      * @return - запрос для передачи сообщения
      */

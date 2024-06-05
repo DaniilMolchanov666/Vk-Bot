@@ -18,7 +18,7 @@ public class ConfirmServerAddressService {
 
     /**
      * Внедрение строки из application.properties
-     * @param code - трока, которую должен вернуть сервер для его успешной регистрации
+     * @param code - строка, которую должен вернуть сервер для его успешной регистрации
      */
     public ConfirmServerAddressService(@Value("${vk.code}") final String code) {
         this.CODE_FOR_CHECK_SERVER = code;
