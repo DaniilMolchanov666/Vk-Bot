@@ -37,19 +37,18 @@ public class SendMessageService {
     public ResponseEntity<String> repeatMessageByUser(final String request) {
         var messageFromRequest = CustomJsonParser.getMessageFromJson(request);
 
-        final String BOT_STARTING_PHRASE = "Вы сказали: ";
-        final String messageForUser = BOT_STARTING_PHRASE + messageFromRequest.getText();
-
-        final int RANDOM_ID_FOR_IGNORE_IDENTITY = 0;
-        final String VERSION_API = "5.236";
+        String botStartingPhrase = "Вы сказали: ";
+        String messageForUser = botStartingPhrase + messageFromRequest.getText();
+        int randomIdForIgnoreUniqueCheck = 0;
+        final String versionOfApi = "5.236";
 
         String requestUri = UriComponentsBuilder
                 .fromUriString("https://api.vk.com/method/messages.send")
                 .queryParam("access_token", ACCESS_TOKEN)
-                .queryParam("random_id", RANDOM_ID_FOR_IGNORE_IDENTITY)
+                .queryParam("random_id", randomIdForIgnoreUniqueCheck)
                 .queryParam("message", messageForUser)
                 .queryParam("user_id", messageFromRequest.getUserId())
-                .queryParam("v", VERSION_API)
+                .queryParam("v", versionOfApi)
                 .build()
                 .toUriString();
 
