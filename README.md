@@ -4,16 +4,16 @@
 ## About:
 Простой ВК бот, который способен повторять сообщение, отправляемое ему от пользователя
 Для взаимодействия с ботом необходимо написать личное сообщение сообществу Vk Bot
-Ссылка: https://vk.com/club226136433
 
-Проект развернут на сервере Рег.облако по адресу http://89.104.68.91:10100
+Перед настройкой необходимо ввести url своего сервера в сообществе и отослать код для подтверждения чтобы получать
+уведомления от сервера VK и обрабатывать их
 
 ## Technologies used:
  - Java (JDK 17)
  - Spring Boot
- - Jacoco
+ - ngrok
 
 ## Project demonstration:
 ![Image alt](https://github.com/DaniilMolchanov666/Vk-Bot//raw/main/images/image1.png)
-![Image alt](https://github.com/DaniilMolchanov666/Vk-Bot//raw/main/images/image2.png)
+![Image alt](https://github.com/DaniilMolchanov666/Vk-Bot//raw/main/images/image2.jpg)
 
