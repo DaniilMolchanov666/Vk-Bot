@@ -10,6 +10,10 @@ import lombok.ToString;
 
 import java.util.Map;
 
+/**
+ * POJO класс для десериализации из JSON запроса
+ * и передачи сообщения от пользователя
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonSerialize
 @JsonDeserialize

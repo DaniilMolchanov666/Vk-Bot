@@ -9,18 +9,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+/**
+ * Сервис для отправки сообщений клиенту
+ */
 @Service
 @Slf4j
-public class SendMessageServiceImpl {
+public class SendMessageService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
     private final String ACCESS_TOKEN;
 
-    public SendMessageServiceImpl(@Value("${vk.token}") final String token) {
+    /**
+     * Внедрение токена из application.properties
+     * @param token - ключ доступа, необходимый для передачи при вызове запросов
+     */
+    public SendMessageService(@Value("${vk.token}") final String token) {
         this.ACCESS_TOKEN = token;
     }
 
+    /**
+     * Метод для отправки сообщения пользователю
+     * @param request -  тело запроса от VK севера
+     * @return - ответ со статусом 200 и строкой 'ok',
+     * который должен быть для подтверждения получения запроса
+     */
     public ResponseEntity<String> repeatMessageByUser(final String request) {
         var messageFromRequest = CustomJsonParser.getMessageFromJson(request);
 
