@@ -14,5 +14,6 @@
  - Jacoco
 
 ## Project demonstration:
-![photo_2024-06-04_18-54-25.jpg](..%2Fphoto_2024-06-04_18-54-25.jpg)
+![Image alt](https://github.com/DaniilMolchanov666/Vk-Bot//raw/main/images/image1.png)
+![Image alt](https://github.com/DaniilMolchanov666/Vk-Bot//raw/main/images/image2.png)
 
