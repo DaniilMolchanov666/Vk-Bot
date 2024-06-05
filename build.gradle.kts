@@ -27,8 +27,6 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-rest")
 
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.security:spring-security-core:6.3.0")
-	implementation("org.springframework.security:spring-security-web:6.3.0")
 
 	implementation("com.google.code.gson:gson:2.11.0")
 

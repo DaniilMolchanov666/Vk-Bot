@@ -4,6 +4,7 @@ import com.example.VK_Bot.model.MessageFromUser;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,11 +15,6 @@ import java.util.Map;
  */
 @Slf4j
 public final class CustomJsonParser {
-
-    /**
-     * Обьект ObjectMapper для парсинга JSON файлов
-     */
-    private static final ObjectMapper objectMapper = new ObjectMapper(new JsonFactory());
 
     /**
      * user_id значение из JSON строки (id пользователя ВК)
@@ -37,10 +33,14 @@ public final class CustomJsonParser {
      * @return - новый экземпляр класса MessageFromUser
      */
     @SneakyThrows
+    @SuppressWarnings("unchecked")
     public static MessageFromUser getMessageFromJson(String request) {
 
-        Map<String, Object> jsonRequestMap = objectMapper.readValue(request, new TypeReference<>() {
-        });
+        Gson gson = new Gson();
+
+        MessageFromUser message = gson.fromJson(request, MessageFromUser.class);
+
+        Map<String, Object> jsonRequestMap = (Map<String, Object>) message.getObject().get("message");
 
         double id = (double) jsonRequestMap.get(USER_ID);
         String text = (String) jsonRequestMap.get(MESSAGE);
